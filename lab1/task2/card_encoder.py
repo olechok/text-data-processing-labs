@@ -2,8 +2,6 @@ import re
 from utils.get_text_from_file import read_text_from_file
 
 
-# CARD_PATTERN = r'\b(\d{2})([\d\s-]{14})\b'
-# CARD_PATTERN2 = r'\b(\d{2})\d{2} \d{4} \d{4} \d{4}\b'
 CARD_PATTERN = r'\b(\d{2})(\d{2})[\s-]?(\d{4})[\s-]?(\d{4})[\s-]?(\d{4})\b'
 
 def mask_bank_cards(text: str) -> str:
