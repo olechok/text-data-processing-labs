@@ -13,13 +13,12 @@ from scipy.cluster.hierarchy import dendrogram, linkage
 from utils.get_text_from_file import read_text_from_file
 from utils.lemmatizator import lemmatize
 
-
 wpt = nltk.WordPunctTokenizer()
 stop_words = nltk.corpus.stopwords.words('english')
 
 
 def preproc_doc(doc):
-    doc = re.sub(r'[^a-zA-Z\s]', '', doc, re.I|re.A)
+    doc = re.sub(r'[^a-zA-Z\s]', '', doc, re.I | re.A)
     doc = doc.lower().strip()
     tokens = wpt.tokenize(doc)
     filtered_tokens = [token for token in tokens if token not in stop_words]
@@ -54,6 +53,9 @@ if __name__ == "__main__":
     labels = ag.labels_
     df_labels = pd.DataFrame({'Document': range(len(labels)), 'Cluster': labels})
     df_labels.to_csv("clusters.csv", index=False)
+
+    for i, (label, text) in enumerate(zip(labels, corpus)):
+        print(f"Doc {i} belongs to Cluster {label}: {text}")
 
     links = linkage(similarity_matrix, 'complete')
 
