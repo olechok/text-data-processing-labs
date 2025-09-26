@@ -37,7 +37,9 @@ if __name__ == "__main__":
     bw_matrix = bw.fit_transform(p_corpus).toarray()
 
     vocab_sorted = bw.get_feature_names_out()
-    pd.DataFrame(bw_matrix, columns=vocab_sorted).to_csv("bagOfWords.csv", sep='\t', index=False)
+    pd.DataFrame(bw_matrix, columns=vocab_sorted).to_csv("bagOfWords.csv",
+                                                         sep='\t',
+                                                         index=False)
 
     tfidf = TfidfTransformer(norm='l2', use_idf=True)
     tfidf_matrix = tfidf.fit_transform(bw_matrix).toarray()
@@ -59,7 +61,10 @@ if __name__ == "__main__":
 
     links = linkage(similarity_matrix, 'complete')
 
-    df_communication_matrix = pd.DataFrame(links, columns=['Document\Cluster 1', 'Document\Cluster 2','Distance', 'Cluster Size'])
+    df_communication_matrix = pd.DataFrame(links, columns=['Document\Cluster 1',
+                                                           'Document\Cluster 2',
+                                                           'Distance',
+                                                           'Cluster Size'])
     df_communication_matrix.to_csv("communication_matrix.csv", sep='\t', index=False)
 
     plt.figure(figsize=(8, 3))
