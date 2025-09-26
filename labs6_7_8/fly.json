@@ -1,0 +1,38 @@
+[
+  {
+    "text": "I have a reservation on UA2345 from Chicago to Denver.",
+    "entities": [
+      {"start": 24, "end": 30, "label": "FLIGHT_NUMBER"}
+    ]
+  },
+  {
+    "text": "Flight AA123 is delayed due to bad weather.",
+    "entities": [
+      {"start": 7, "end": 12, "label": "FLIGHT_NUMBER"}
+    ]
+  },
+  {
+    "text": "Please confirm my booking for flight DL6789.",
+    "entities": [
+      {"start": 37, "end": 43, "label": "FLIGHT_NUMBER"}
+    ]
+  },
+  {
+    "text": "The passenger is travelling on flight WN45.",
+    "entities": [
+      {"start": 39, "end": 43, "label": "FLIGHT_NUMBER"}
+    ]
+  },
+  {
+    "text": "I need to change my flight AS987.",
+    "entities": [
+      {"start": 28, "end": 33, "label": "FLIGHT_NUMBER"}
+    ]
+  },
+    {
+    "text": "The passenger is travelling on flight WN45.",
+    "entities": [
+      {"start": 39, "end": 43, "label": "FLIGHT_NUMBER"}
+    ]
+  }
+]
